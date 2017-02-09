@@ -318,7 +318,6 @@ Navigation
   outline: none; }
 
 .nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
-  content: "";
   position: absolute;
   display: block;
   width: 35px;
