@@ -35,5 +35,16 @@
 
   <body id="top">
     <%= yield %>
+
+  <!-- Javascript -->
+  <%= javascript_include_tag 'jquery-1.11.2.min.js' %>
+  <%= javascript_include_tag 'jquery.fancybox.pack.js' %>
+  <%= javascript_include_tag 'bootstrap.min.js' %>
+  <%= javascript_include_tag 'scripts.js' %>
+  <%= javascript_include_tag 'jquery.flexslider-min.js' %>
+  <%= javascript_include_tag 'jquery.waypoints.min.js' %>
+  <script src="https://maps.google.com/maps/api/js?key=AIzaSyBZ7ZhwVIUYWElrUzcGPx9bPUe3-2RhKXU"></script>
+  <%= javascript_include_tag 'map_div.js' %>
+  
   </body>
 </html>
