@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.all.paginate(page: params[:page], per_page: 10)
+    @messages = Message.all.paginate(page: params[:page], per_page: 9)
   end
 
   def create
