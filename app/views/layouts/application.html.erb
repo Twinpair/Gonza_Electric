@@ -37,6 +37,7 @@
     <%= yield %>
 
   <!-- Javascript -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'jquery-1.11.2.min.js' %>
   <%= javascript_include_tag 'jquery.fancybox.pack.js' %>
   <%= javascript_include_tag 'bootstrap.min.js' %>

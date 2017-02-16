@@ -235,52 +235,73 @@
           <div id="map-canvas"></div>
         </div>
         <div class="col-md-6">
-          <h4 id="black"><i class="fa fa-envelope" aria-hidden="true"></i> Email Us </h4>
-          <p>Email us at <b>GonzaElectric83@gmail.com</b>. We will respond to you in less than a day.</p>
-          <hr>
-          <h4 id="black"><i class="fa fa-comments-o" aria-hidden="true"></i> Leave Us A Service Request </h4>
-          <p>Leave your request and information below. We will contact you back ASAP. 
-            <br><b>(<span id="red">*</span> Fields Are Required)</b></p>
-          <form class="form-horizontal signup-form" action="" method="post">
-            <!-- Name input-->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="name"><span id="red">*</span> Name:</label>
-              <div class="col-md-9">
-                <input id="name" name="name" type="text" placeholder="Your Name" class="form-control" required="required">
-              </div>
-            </div>
-                  
-            <!-- Phone input-->
-            <div class="form-group" >
-              <label class="col-md-3 control-label" for="phone"><span id="red">*</span> Phone #:</label>
-              <div class="col-md-9">
-                <input id="phone" name="phone" type="text" placeholder="Your Phone #" class="form-control" required="required">
-              </div>
-            </div>
+          <section id="form">
+            <h4 id="black"><i class="fa fa-envelope" aria-hidden="true"></i> Email Us </h4>
+            <p>Email us at <b>GonzaElectric83@gmail.com</b>. We respond to you in less than a day.</p>
+            <hr>
+            <h4 id="black"><i class="fa fa-comments-o" aria-hidden="true"></i> Leave Us A Service Request </h4>
+            <p>Leave your request and information below. We will contact you back ASAP. 
+              <br><b>(<span id="red">*</span> Fields Are Required)</b></p>
+            <%= form_for @message, html: { class: "form-horizontal signup-form"} do |f| %>
+              <% flash.each do |message_type, message| %>
+                <%= content_tag(:div, message, class: "alert alert-#{message_type} text-center", id: "body-up") %>
+              <% end %>
 
-            <!-- Email input-->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="email">E-mail:</label>
-              <div class="col-md-9">
-                <input id="email" name="email" type="email" placeholder="Your E-mail" class="form-control" >
+              <% if flash.key?("success") %>
+                <%= image_tag("logo.png", alt:"Gonza Electric") %>
+              <% else %>
+              <!-- Name input-->
+              <div class="form-group">
+                <label class="col-md-3 control-label" for="name"><span id="red">*</span> Full Name:</label>
+                <div class="col-md-9">
+                  <%= f.text_field :name, placeholder: "Your Name", class: "form-control", required: "required" %>
+                </div>
               </div>
-            </div>
+                    
+              <!-- Phone input-->
+              <div class="form-group" >
+                <label class="col-md-3 control-label" for="phone"><span id="red">*</span> Phone #:</label>
+                <div class="col-md-9">
+                  <%= f.text_field :phone, placeholder: "Your Phone #", class: "form-control", required: "required" %>
+                </div>
+              </div>
 
-            <!-- Message body -->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="message"><span id="red">*</span> Service Request:</label>
-              <div class="col-md-9">
-                <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5" required="required"></textarea>
+              <!-- Email input-->
+              <div class="form-group">
+                <label class="col-md-3 control-label" for="email"><span id="red">*</span>  E-mail:</label>
+                <div class="col-md-9">
+                  <%= f.text_field :email, placeholder: "Your E-mail", class: "form-control" %>
+                </div>
               </div>
-            </div>
 
-            <!-- Form actions -->
-            <div class="form-group">
-              <div class="col-md-11 col-md-offset-2">
-                <button type="submit" class="btn-fill sign-up-btn">Send</button>
+              <!-- Message body -->
+              <div class="form-group">
+                <label class="col-md-3 control-label" for="message"><span id="red">*</span>Service Request:</label>
+                <div class="col-md-9">
+                  <%= f.text_area :message, class: "form-control", placeholder: "Please enter your message here...", rows: "5", required: "required" %>
+                </div>
               </div>
-            </div>
-          </form>
+
+              <!-- Captcha input-->
+              <div class="form-group" >
+                <label class="col-md-3 control-label" for="captcha"><span id="red">*</span>  Captcha:</label>
+                <div class="col-md-9">
+                  <%= image_tag("captcha.png") %>
+                  <%= f.text_field :captcha, placeholder: "Enter the text shown in the image", class: "form-control", required: "required" %>
+                </div>
+              </div>
+
+              <!-- Form actions -->
+              <div class="form-group">
+                <div class="col-md-11 col-md-offset-2">
+                  <%= f.submit "Send", class: "btn-fill sign-up-btn" %>
+                </div>
+              </div>
+
+              <%= f.text_field :language, value: "english", hidden: "true" %>
+              <% end %>
+            <%end %>
+          </section>
         </div>
       </div>
     </div>
