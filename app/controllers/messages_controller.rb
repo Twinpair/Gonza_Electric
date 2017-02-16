@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_filter :authenticate, only: :index
   def index
     @messages = Message.all.paginate(page: params[:page], per_page: 9)
   end
@@ -25,5 +26,13 @@ private
 
   def message_params
     params.require(:message).permit(:name, :phone, :email, :message, :captcha, :language)
+  end
+
+protected
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == ENV["ADMIN"] && password == ENV["PASSWORD"]
+    end
   end
 end
