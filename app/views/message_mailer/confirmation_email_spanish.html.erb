@@ -1,0 +1,74 @@
+  <%= stylesheet_link_tag "email.css" %>
+
+  <!-- HEADER -->
+  <table class="body-wrap">
+    <tr>
+      <td class="container" bgcolor="#FFFFFF">
+        <div class="content">
+          <table id="header">
+            <tr>
+              <td align="left">><a href="http://www.gonzaelectric.com"><%= image_tag("logo.png", alt:"Gonza Electric") %></a></td>
+              <td align="center"><a href="http://localhost:3000/"><h1 class="collapse" id="header-text"><b><a id="header-text-link" href="http://www.gonzaelectric.com">Gonza Electric</a></b></h1></a></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <!-- /HEADER -->
+
+  <!-- BODY -->
+  <table class="body-wrap">
+    <tr>
+      <td class="container" id="body">
+        <div class="content">
+          <table>
+            <tr>
+              <td>
+                <p class="lead">Hola, <%= @message.name.split(' ').first %><br><p>
+                <p class="lead">Gracias por ponerse en contacto con Gonza Electric! Queremos confirmar que su solicitud / mensaje fue recibido. Estaremos en contacto con usted pronto!</p>    
+                <p class="lead">Aquí hay una copia de su mensaje para sus registros:</p>         
+                <table border="2" class="message"> 
+                  <th>Message</th>
+                  <tr>
+                    <td><%= @message.message %></td>
+                  </tr>
+                </table>
+
+                <!-- Contact & Social -->
+                <table class="social">
+                  <tr>
+                    <td>
+                      <table align="left" class="column">
+                        <tr>
+                          <td>                
+                            <h5>Nuestra Información de Contacto:</h5>
+                            <p>Teléfono: <strong>(323) 213-1644</strong><br/>
+                            Correo Electrónico <strong><a href="emailto:gonzaelectric83@gmail.com">gonzaelectric83@gmail.com</a></strong><br/>
+                            Sitio Web: <strong><a href="http://www.gonzaelectric.com">GonzaElectric.com</a></strong></p>
+                          </td>
+                        </tr>
+                      </table>
+                      <table align="left" class="column">
+                        <tbody>
+                          <tr>
+                          <td>        
+                            <h5 class="">Conectate con Nosotros</h5>
+                            <p class=""><a href="https://www.facebook.com/GonzaElectric/" class="soc-btn fb">Facebook</a>  <a href="https://www.yelp.com/biz/gonza-electric-los-angeles" class="soc-btn gp">Yelp</a></p>
+                          </td>
+                          </tr>
+                        </tbody>
+                      </table> 
+                    </td>
+                  </tr>
+                </table>
+                <!-- /Contact & Social -->
+
+              </td>
+            </tr>
+          </table>
+        </div>           
+      </td>
+    </tr>
+  </table>
+  <!-- /BODY -->

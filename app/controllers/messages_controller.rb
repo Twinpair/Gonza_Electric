@@ -7,9 +7,17 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save && @message.language == "english"
+      MessageMailer.service_request(@message).deliver_now
+      if !@message.email.empty?
+        MessageMailer.confirmation_email(@message).deliver_now
+      end
       flash[:success] = "Thank you for contacting us. We will be in touch soon!"
       redirect_to "/#form"  
     elsif @message.save && @message.language == "espanol"
+      MessageMailer.service_request(@message).deliver_now
+      if !@message.email.empty?
+        MessageMailer.confirmation_email_spanish(@message).deliver_now
+      end
       flash[:success] = "Gracias por contactar con nosotros. Estaremos en contacto pronto!"
       redirect_to "/espanol#form"
     else
