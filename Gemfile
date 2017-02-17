@@ -37,6 +37,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
+#Style emails in production without inline css
+gem 'premailer-rails'
+gem 'nokogiri'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'

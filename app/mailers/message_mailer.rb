@@ -7,6 +7,7 @@ class MessageMailer < ApplicationMailer
   #
   #Service request email is sent to gonza electric when a service request is submitted
   def service_request(message)
+    attachments.inline['logo.png'] = File.read(Rails.root.join("app/assets/images/logo.png"))
     @message = message
     mail to: "gonzaelectric83@gmail.com", subject: "Service Request"
   end
@@ -18,6 +19,7 @@ class MessageMailer < ApplicationMailer
   #
   #Confirmation email is sent to customer when they submit a service request in english
   def confirmation_email(message)
+    attachments.inline['logo.png'] = File.read(Rails.root.join("app/assets/images/logo.png"))
     @message = message
     mail to: message.email, subject: "Service Request Confirmation"
   end
@@ -29,6 +31,7 @@ class MessageMailer < ApplicationMailer
   #
   #Spanish version of the confirmation email is sent to customer when they submit a service request in spanish
   def confirmation_email_spanish(message)
+    attachments.inline['logo.png'] = File.read(Rails.root.join("app/assets/images/logo.png"))
     @message = message
     mail to: message.email, subject: "Confirmación de solicitud de servicio"
   end
