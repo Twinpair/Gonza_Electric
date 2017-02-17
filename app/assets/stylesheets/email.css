@@ -27,6 +27,8 @@ body {
 ------------------------------------- */
 a { color: #2BA6CB; text-decoration:none;}
 
+.link{ color: #15c; text-decoration:underline; }
+
 .btn {
   ration:none;
   color: #FFF;
@@ -91,7 +93,7 @@ table.head-wrap { width: 100%;}
 ------------------------------------- */
 table.body-wrap { width: 100%;}
 #body{ background-color: #FFFFFF; }
-.message{ margin-bottom: 10px; }
+.message{ margin-bottom: 10px; font-size: 16px;}
 
 
 /* ------------------------------------- 
