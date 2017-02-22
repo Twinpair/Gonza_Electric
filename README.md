@@ -1,24 +1,15 @@
-# README
+# Gonza Electric
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the repository for Gonza Electric's business website. You can visit the site by navigating to http://www.gonzaelectric.com
 
-Things you may want to cover:
+Version and Deployment instructions:
 
-* Ruby version
+* Ruby version - 2.4
 
-* System dependencies
+* Rails version - 5.0
 
-* Configuration
+* Database - Postgres
 
-* Database creation
+* Framework - Ruby on Rails
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Hosted on Heroku
