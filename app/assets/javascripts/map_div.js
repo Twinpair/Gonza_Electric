@@ -1,11 +1,11 @@
-/* google maps */
+/* Google Map Div */
 
  google.maps.event.addDomListener(window, 'load', initialize);
 
 function initialize() {
 
-  /* position Amsterdam */
-  var latlng = new google.maps.LatLng(34.0187371, -118.2474923);
+  /* Office location */
+  var latlng = new google.maps.LatLng(34.0187327, -118.2453036);
 
   var mapOptions = {
     center: latlng,
@@ -23,5 +23,3 @@ function initialize() {
   marker.setMap(map);
 
 };
-
-/* end google maps */
