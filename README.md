@@ -18,7 +18,7 @@ This is the repository for Gonza Electric's business website. You can visit the 
 
 Make sure you have Rails and Git installed on your machine
 
-1) git clone the repo to your local machine `git clone https://github.com/Twinpair/gonza_electric.git`
+1) git clone the repo to your local machine `git clone https://github.com/Twinpair/Gonza_Electric.git`
 
 2) Run `bundle install` to install gems
 
