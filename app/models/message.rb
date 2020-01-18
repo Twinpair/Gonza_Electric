@@ -6,7 +6,7 @@ class Message < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]/i
   validates :email, length: {maximum: 200}, format: { with:  VALID_EMAIL_REGEX , message: "is in wrong format. Correct format: aaaaa@zzz.com"}, if: :email_present
   validates :message, presence: true
-  VALID_CAPTCHA_REGEX = /\Aw68hp\z/i
+  VALID_CAPTCHA_REGEX = /\Aczarface\z/i
   validates :captcha, presence: true, format: {with: VALID_CAPTCHA_REGEX, message: "text did not match image text"}
 
 private
